@@ -69,3 +69,6 @@ asset Contract identified by contractId {
 transaction TeaLeavesShipmentReceived {
   --> TeaLeavesShipment shipment
 }
+
+transaction SetupDemo {
+}
