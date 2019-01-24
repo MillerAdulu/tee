@@ -18,11 +18,6 @@
 
 namespace org.milleradulu.tee
 
-enum ShipmentStatus {
-  o ARRIVED
-  o IN_TRANSIT
-}
-
 abstract concept UserName {
   o String firstName
   o String lastName
@@ -35,34 +30,31 @@ abstract concept Address {
   o String street optional
 }
 
-participant TeaFarmer identified by farmerId {
-  o String farmerId
+participant TeaFarmer identified by email {
+  o String email
   o UserName name
   o String phoneNumber
+  o Double accountBalance default = 0.0
+}
+
+participant TeaFactory identified by email {
   o String email
-}
-
-participant TeaFactory identified by factoryId {
-  o String factoryId
-  o String name
-  o Address address 
-}
-
-participant ShoppingCenter identified by centerId {
-  o String centerId
   o String name
   o Address address
+  o Double accountBalance default = 0.0
 }
 
-participant TeaConsumer identified by teaConsumer {
-  o String teaConsumer
-  o UserName name
+participant ShoppingCenter identified by email {
+  o String email
+  o String name
+  o Address address
+  o Double accountBalance default = 0.0
 }
 
 asset TeaLeavesShipment identified by shipmentId {
   o String shipmentId
   --> Contract contract
-  o ShipmentStatus status
+  o Long unitCount
 }
 
 asset Contract identified by contractId {
@@ -70,7 +62,6 @@ asset Contract identified by contractId {
   --> TeaFarmer farmer
   --> TeaFactory factory
   --> ShoppingCenter shoppingCenter
-  --> TeaConsumer consumer
   o DateTime arrivalTime
   o Double unitPrice
 }
