@@ -18,21 +18,10 @@
 
 namespace org.milleradulu.tee
 
-abstract concept UserName {
-  o String firstName
-  o String lastName
-}
-
-abstract concept Address {
-  o String city
-  o String county
-  o String constituency
-  o String street optional
-}
-
 participant TeaFarmer identified by email {
   o String email
-  o UserName name
+  o String firstName
+  o String lastName
   o String phoneNumber
   o Double accountBalance default = 0.0
 }
@@ -40,14 +29,20 @@ participant TeaFarmer identified by email {
 participant TeaFactory identified by email {
   o String email
   o String name
-  o Address address
+  o String city
+  o String county
+  o String constituency
+  o String street optional
   o Double accountBalance default = 0.0
 }
 
 participant ShoppingCenter identified by email {
   o String email
   o String name
-  o Address address
+  o String city
+  o String county
+  o String constituency
+  o String street optional
   o Double accountBalance default = 0.0
 }
 
