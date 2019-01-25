@@ -47,9 +47,39 @@
   
               
                 <div class="form-group text-left">
-                  <label for="address">address</label>
+                  <label for="city">city</label>
                   
-                      <textarea formControlName="address" class="form-control" rows="3"></textarea>
+                    <input formControlName="city" type="text" class="form-control">
+                  
+                </div>
+              
+            
+  
+              
+                <div class="form-group text-left">
+                  <label for="county">county</label>
+                  
+                    <input formControlName="county" type="text" class="form-control">
+                  
+                </div>
+              
+            
+  
+              
+                <div class="form-group text-left">
+                  <label for="constituency">constituency</label>
+                  
+                    <input formControlName="constituency" type="text" class="form-control">
+                  
+                </div>
+              
+            
+  
+              
+                <div class="form-group text-left">
+                  <label for="street">street</label>
+                  
+                    <input formControlName="street" type="text" class="form-control">
                   
                 </div>
               
@@ -110,12 +140,37 @@
               </div>
             
               <div class="form-group text-left">
-                <label for="address">address</label>
+                <label for="city">city</label>
   
                 
-                  
-                    <textarea [ngModel]="address" formControlName="address" class="form-control" rows="3"></textarea>
-                  
+                  <input [ngModel]="city"formControlName="city" type="text" class="form-control">
+                
+  
+              </div>
+            
+              <div class="form-group text-left">
+                <label for="county">county</label>
+  
+                
+                  <input [ngModel]="county"formControlName="county" type="text" class="form-control">
+                
+  
+              </div>
+            
+              <div class="form-group text-left">
+                <label for="constituency">constituency</label>
+  
+                
+                  <input [ngModel]="constituency"formControlName="constituency" type="text" class="form-control">
+                
+  
+              </div>
+            
+              <div class="form-group text-left">
+                <label for="street">street</label>
+  
+                
+                  <input [ngModel]="street"formControlName="street" type="text" class="form-control">
                 
   
               </div>
@@ -204,7 +259,13 @@
               
                   <th class="info">name</th>
               
-                  <th class="info">address</th>
+                  <th class="info">city</th>
+              
+                  <th class="info">county</th>
+              
+                  <th class="info">constituency</th>
+              
+                  <th class="info">street</th>
               
                   <th class="info">accountBalance</th>
               
@@ -219,7 +280,13 @@
               
                   <td class="participant-properties">{{participant.name}}</td>
               
-                  <td class="participant-properties">{{participant.address}}</td>
+                  <td class="participant-properties">{{participant.city}}</td>
+              
+                  <td class="participant-properties">{{participant.county}}</td>
+              
+                  <td class="participant-properties">{{participant.constituency}}</td>
+              
+                  <td class="participant-properties">{{participant.street}}</td>
               
                   <td class="participant-properties">{{participant.accountBalance}}</td>
               

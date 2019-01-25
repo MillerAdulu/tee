@@ -3,32 +3,29 @@ import {Participant} from './org.hyperledger.composer.system';
 import {Transaction} from './org.hyperledger.composer.system';
 import {Event} from './org.hyperledger.composer.system';
 // export namespace org.milleradulu.tee{
-   export abstract class UserName {
-      firstName: string;
-      lastName: string;
-   }
-   export abstract class Address {
-      city: string;
-      county: string;
-      constituency: string;
-      street: string;
-   }
    export class TeaFarmer extends Participant {
       email: string;
-      name: UserName;
+      firstName: string;
+      lastName: string;
       phoneNumber: string;
       accountBalance: number;
    }
    export class TeaFactory extends Participant {
       email: string;
       name: string;
-      address: Address;
+      city: string;
+      county: string;
+      constituency: string;
+      street: string;
       accountBalance: number;
    }
    export class ShoppingCenter extends Participant {
       email: string;
       name: string;
-      address: Address;
+      city: string;
+      county: string;
+      constituency: string;
+      street: string;
       accountBalance: number;
    }
    export class TeaLeavesShipment extends Asset {

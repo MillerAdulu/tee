@@ -34,7 +34,10 @@ export class TeaFactoryComponent implements OnInit {
 
   email = new FormControl('', Validators.required);
   name = new FormControl('', Validators.required);
-  address = new FormControl('', Validators.required);
+  city = new FormControl('', Validators.required);
+  county = new FormControl('', Validators.required);
+  constituency = new FormControl('', Validators.required);
+  street = new FormControl('', Validators.required);
   accountBalance = new FormControl('', Validators.required);
 
 
@@ -42,7 +45,10 @@ export class TeaFactoryComponent implements OnInit {
     this.myForm = fb.group({
       email: this.email,
       name: this.name,
-      address: this.address,
+      city: this.city,
+      county: this.county,
+      constituency: this.constituency,
+      street: this.street,
       accountBalance: this.accountBalance
     });
   };
@@ -102,14 +108,20 @@ export class TeaFactoryComponent implements OnInit {
       $class: 'org.milleradulu.tee.TeaFactory',
       'email': this.email.value,
       'name': this.name.value,
-      'address': this.address.value,
+      'city': this.city.value,
+      'county': this.county.value,
+      'constituency': this.constituency.value,
+      'street': this.street.value,
       'accountBalance': this.accountBalance.value
     };
 
     this.myForm.setValue({
       'email': null,
       'name': null,
-      'address': null,
+      'city': null,
+      'county': null,
+      'constituency': null,
+      'street': null,
       'accountBalance': null
     });
 
@@ -120,7 +132,10 @@ export class TeaFactoryComponent implements OnInit {
       this.myForm.setValue({
         'email': null,
         'name': null,
-        'address': null,
+        'city': null,
+        'county': null,
+        'constituency': null,
+        'street': null,
         'accountBalance': null
       });
       this.loadAll(); 
@@ -139,7 +154,10 @@ export class TeaFactoryComponent implements OnInit {
     this.participant = {
       $class: 'org.milleradulu.tee.TeaFactory',
       'name': this.name.value,
-      'address': this.address.value,
+      'city': this.city.value,
+      'county': this.county.value,
+      'constituency': this.constituency.value,
+      'street': this.street.value,
       'accountBalance': this.accountBalance.value
     };
 
@@ -193,7 +211,10 @@ export class TeaFactoryComponent implements OnInit {
       const formObject = {
         'email': null,
         'name': null,
-        'address': null,
+        'city': null,
+        'county': null,
+        'constituency': null,
+        'street': null,
         'accountBalance': null
       };
 
@@ -209,10 +230,28 @@ export class TeaFactoryComponent implements OnInit {
         formObject.name = null;
       }
 
-      if (result.address) {
-        formObject.address = result.address;
+      if (result.city) {
+        formObject.city = result.city;
       } else {
-        formObject.address = null;
+        formObject.city = null;
+      }
+
+      if (result.county) {
+        formObject.county = result.county;
+      } else {
+        formObject.county = null;
+      }
+
+      if (result.constituency) {
+        formObject.constituency = result.constituency;
+      } else {
+        formObject.constituency = null;
+      }
+
+      if (result.street) {
+        formObject.street = result.street;
+      } else {
+        formObject.street = null;
       }
 
       if (result.accountBalance) {
@@ -239,7 +278,10 @@ export class TeaFactoryComponent implements OnInit {
     this.myForm.setValue({
       'email': null,
       'name': null,
-      'address': null,
+      'city': null,
+      'county': null,
+      'constituency': null,
+      'street': null,
       'accountBalance': null
     });
   }

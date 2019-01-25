@@ -33,7 +33,8 @@ export class TeaFarmerComponent implements OnInit {
   private errorMessage;
 
   email = new FormControl('', Validators.required);
-  name = new FormControl('', Validators.required);
+  firstName = new FormControl('', Validators.required);
+  lastName = new FormControl('', Validators.required);
   phoneNumber = new FormControl('', Validators.required);
   accountBalance = new FormControl('', Validators.required);
 
@@ -41,7 +42,8 @@ export class TeaFarmerComponent implements OnInit {
   constructor(public serviceTeaFarmer: TeaFarmerService, fb: FormBuilder) {
     this.myForm = fb.group({
       email: this.email,
-      name: this.name,
+      firstName: this.firstName,
+      lastName: this.lastName,
       phoneNumber: this.phoneNumber,
       accountBalance: this.accountBalance
     });
@@ -101,14 +103,16 @@ export class TeaFarmerComponent implements OnInit {
     this.participant = {
       $class: 'org.milleradulu.tee.TeaFarmer',
       'email': this.email.value,
-      'name': this.name.value,
+      'firstName': this.firstName.value,
+      'lastName': this.lastName.value,
       'phoneNumber': this.phoneNumber.value,
       'accountBalance': this.accountBalance.value
     };
 
     this.myForm.setValue({
       'email': null,
-      'name': null,
+      'firstName': null,
+      'lastName': null,
       'phoneNumber': null,
       'accountBalance': null
     });
@@ -119,7 +123,8 @@ export class TeaFarmerComponent implements OnInit {
       this.errorMessage = null;
       this.myForm.setValue({
         'email': null,
-        'name': null,
+        'firstName': null,
+        'lastName': null,
         'phoneNumber': null,
         'accountBalance': null
       });
@@ -138,7 +143,8 @@ export class TeaFarmerComponent implements OnInit {
    updateParticipant(form: any): Promise<any> {
     this.participant = {
       $class: 'org.milleradulu.tee.TeaFarmer',
-      'name': this.name.value,
+      'firstName': this.firstName.value,
+      'lastName': this.lastName.value,
       'phoneNumber': this.phoneNumber.value,
       'accountBalance': this.accountBalance.value
     };
@@ -192,7 +198,8 @@ export class TeaFarmerComponent implements OnInit {
       this.errorMessage = null;
       const formObject = {
         'email': null,
-        'name': null,
+        'firstName': null,
+        'lastName': null,
         'phoneNumber': null,
         'accountBalance': null
       };
@@ -203,10 +210,16 @@ export class TeaFarmerComponent implements OnInit {
         formObject.email = null;
       }
 
-      if (result.name) {
-        formObject.name = result.name;
+      if (result.firstName) {
+        formObject.firstName = result.firstName;
       } else {
-        formObject.name = null;
+        formObject.firstName = null;
+      }
+
+      if (result.lastName) {
+        formObject.lastName = result.lastName;
+      } else {
+        formObject.lastName = null;
       }
 
       if (result.phoneNumber) {
@@ -238,7 +251,8 @@ export class TeaFarmerComponent implements OnInit {
   resetForm(): void {
     this.myForm.setValue({
       'email': null,
-      'name': null,
+      'firstName': null,
+      'lastName': null,
       'phoneNumber': null,
       'accountBalance': null
     });

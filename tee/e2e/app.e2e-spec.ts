@@ -101,10 +101,10 @@ describe('Starting tests for tee', function() {
       });
     });
 
-    it('TeaFarmer table should have 5 columns',() => {
+    it('TeaFarmer table should have 6 columns',() => {
       page.navigateTo('/TeaFarmer');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(5); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(6); // Addition of 1 for 'Action' column
       });
     });
   
@@ -119,10 +119,10 @@ describe('Starting tests for tee', function() {
       });
     });
 
-    it('TeaFactory table should have 5 columns',() => {
+    it('TeaFactory table should have 8 columns',() => {
       page.navigateTo('/TeaFactory');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(5); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(8); // Addition of 1 for 'Action' column
       });
     });
   
@@ -137,10 +137,10 @@ describe('Starting tests for tee', function() {
       });
     });
 
-    it('ShoppingCenter table should have 5 columns',() => {
+    it('ShoppingCenter table should have 8 columns',() => {
       page.navigateTo('/ShoppingCenter');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(5); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(8); // Addition of 1 for 'Action' column
       });
     });
   
