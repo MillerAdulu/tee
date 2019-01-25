@@ -11,19 +11,23 @@ A Hyperledger Composer blockchain application to enable proper tracking of tea p
 
 ``` git clone https://github.com/MillerAdulu/tee.git ```
 
-3. Install the business network
+3. Generate the archive file
+
+``` composer archive create -t dir -n . ```
+
+4. Install the business network
 
 ``` composer network install --card PeerAdmin@hlfv1 --archiveFile tee@0.0.1.bna ```
 
-4. Start the business network
+5. Start the business network
 
 ``` composer network start --networkName tee --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card ```
 
-5. Check that the business network has been deployed successfully by pinging it
+6. Check that the business network has been deployed successfully by pinging it
 
 ``` composer network ping --card admin@tee ```
 
-6. Generate the REST API
+7. Generate the REST API
 
 ``` composer-rest-server ```
 
@@ -40,7 +44,7 @@ A Hyperledger Composer blockchain application to enable proper tracking of tea p
 
 ### Optional
 
-7. Generate a skeleton angular application
+8. Generate a skeleton angular application
 
 ``` yo hyperledger-composer:angular ```
 
