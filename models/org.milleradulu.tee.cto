@@ -61,7 +61,11 @@ asset Contract identified by contractId {
   o Double unitPrice
 }
 
-transaction TeaLeavesShipmentReceived {
+transaction PayFarmer {
+  --> TeaLeavesShipment shipment
+}
+
+transaction PayFactory {
   --> TeaLeavesShipment shipment
 }
 
